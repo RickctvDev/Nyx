@@ -10,7 +10,9 @@ import Foundation
 import AVFoundation
 
 class SoundPlayer: AVAudioPlayer {
+    var soundTimer: NSTimer!
     
+    var audioFadeOutSpeed: Float = 0.05
     var sound = AVAudioPlayer!()
     var track: String!
     
@@ -55,10 +57,19 @@ class SoundPlayer: AVAudioPlayer {
             sound.prepareToPlay()
             sound.play()
         }
-        
-        
-
-        
     }
 
+    func fadeVolume(){
+            soundTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "fadeNow", userInfo: nil, repeats: true)
+        
+    }
+    
+    func fadeNow(){
+        sound.volume = sound.volume - audioFadeOutSpeed
+        if sound.volume <= 0 {
+            sound.stop()
+            soundTimer.invalidate()
+        }
+        print(sound.volume)
+    }
 }

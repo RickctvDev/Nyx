@@ -13,6 +13,8 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     //Properties
     var title = SKLabelNode(text: "Nyx")
     var audioPlayer = SoundPlayer(trackName: "Scary")
+    let startButton = MainMenuButton(buttonText: "Start", buttonName: "Start")
+    let quitButton = MainMenuButton(buttonText: "Quit", buttonName: "Quit")
     
     
     override func didMoveToView(view: SKView) {
@@ -21,14 +23,11 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         createTitle()
         createTitleButtons()
         audioPlayer.playForever()
-        
     }
     
     func createTitleButtons(){
-        let startButton = MainMenuButton(buttonText: "Start")
         addChild(startButton._button)
         
-        let quitButton = MainMenuButton(buttonText: "Quit")
         quitButton._button.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(startButton._button.frame) - quitButton._button.frame.size.height * 1.5)
         addChild(quitButton._button)
     }
@@ -41,12 +40,20 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
         addChild(title)
     }
     
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            
+            //Check to see which main menu Button was pressed [Will not be NULL]
+            if(self.nodeAtPoint(location).name != nil && self.nodeAtPoint(location).name == startButton._button.name) {
+                print("Touched Start")
+            }
+            if(self.nodeAtPoint(location).name != nil && self.nodeAtPoint(location).name == quitButton._button.name) {
+                print("Touched Quit")
+            }
+        }
     
-    }
-   
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
     }
 }

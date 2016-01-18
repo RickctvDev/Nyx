@@ -13,8 +13,9 @@ class MainMenuButton{
     let _button: SKSpriteNode!
     let _buttonText: SKLabelNode!
     
-    init(buttonText: String){
+    init(buttonText: String, buttonName: String){
         _button = SKSpriteNode(imageNamed: "MainMenuButton")
+        _button.name = buttonName
         
         _buttonText = SKLabelNode(text: buttonText)
         _button.size = CGSizeMake(_button.frame.size.width - 60, 100)
