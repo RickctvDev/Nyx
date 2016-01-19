@@ -10,9 +10,13 @@ import Foundation
 import AVFoundation
 
 class SoundPlayer: AVAudioPlayer {
-    var soundTimer: NSTimer!
-    
+    //Properties For You To Change The Feel:
     var audioFadeOutSpeed: Float = 0.05
+    
+    
+    
+    //Other Properties
+    var soundTimer: NSTimer!
     var sound = AVAudioPlayer!()
     var track: String!
     
@@ -61,7 +65,6 @@ class SoundPlayer: AVAudioPlayer {
 
     func fadeVolume(){
             soundTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "fadeNow", userInfo: nil, repeats: true)
-        
     }
     
     func fadeNow(){
@@ -70,6 +73,5 @@ class SoundPlayer: AVAudioPlayer {
             sound.stop()
             soundTimer.invalidate()
         }
-        print(sound.volume)
     }
 }

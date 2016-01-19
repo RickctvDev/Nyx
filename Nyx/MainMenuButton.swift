@@ -25,11 +25,8 @@ class MainMenuButton{
         _buttonText.position = CGPointMake(CGRectGetMidX(_button.frame), CGRectGetMidY(_button.frame) - 15)
         _buttonText.fontName = "Courier-Bold"
         _button.addChild(_buttonText)
-    
     }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
