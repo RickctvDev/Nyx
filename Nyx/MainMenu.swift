@@ -23,8 +23,6 @@ class MainMenu: SKScene, AVAudioPlayerDelegate {
         createTitle()
         createTitleButtons()
         audioPlayer.playForever()
-        
-        print(self.frame.size)
     }
     
     func createTitleButtons(){
@@ -52,8 +50,6 @@ class MainMenu: SKScene, AVAudioPlayerDelegate {
             if(self.nodeAtPoint(location).name != nil && self.nodeAtPoint(location).name == startButton._button.name) {
                 audioPlayer.fadeVolume()
                 moveToScene(GameScene(fileNamed: "GameScene"))
-                
-                
             }
             if(self.nodeAtPoint(location).name != nil && self.nodeAtPoint(location).name == quitButton._button.name) {
                 print("Touched Settings")
@@ -72,9 +68,4 @@ class MainMenu: SKScene, AVAudioPlayerDelegate {
             skView.presentScene(scene)
         }
     }
-    
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        
-    }
-    
 }

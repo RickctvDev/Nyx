@@ -16,9 +16,9 @@ class MainMenuButton{
     init(buttonText: String, buttonName: String){
         _button = SKSpriteNode(imageNamed: "MainMenuButton")
         _button.name = buttonName
+        _button.size = CGSizeMake(_button.frame.size.width - 60, 100)
         
         _buttonText = SKLabelNode(text: buttonText)
-        _button.size = CGSizeMake(_button.frame.size.width - 60, 100)
         _buttonText.fontSize = 50
         _buttonText.fontColor = UIColor.blackColor()
         _buttonText.zPosition = 1

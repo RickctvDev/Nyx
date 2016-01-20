@@ -13,8 +13,6 @@ class SoundPlayer: AVAudioPlayer {
     //Properties For You To Change The Feel:
     var audioFadeOutSpeed: Float = 0.05
     
-    
-    
     //Other Properties
     var soundTimer: NSTimer!
     var sound = AVAudioPlayer!()
