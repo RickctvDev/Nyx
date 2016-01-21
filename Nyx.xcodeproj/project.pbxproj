@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD1BF9D11C4ECB0600DCEA1F /* StatsBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9D01C4ECB0600DCEA1F /* StatsBoard.swift */; };
-		CD1BF9D31C4EEBCD00DCEA1F /* NyxSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeech.swift */; };
+		CD1BF9D31C4EEBCD00DCEA1F /* NyxSpeechBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeechBox.swift */; };
+		CD28B9561C5177F70008FB21 /* NyxSpeechText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD28B9551C5177F70008FB21 /* NyxSpeechText.swift */; };
 		CD763F661C4D5D2200083C27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD763F651C4D5D2200083C27 /* AppDelegate.swift */; };
 		CD763F6A1C4D5D2200083C27 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD763F691C4D5D2200083C27 /* MainMenu.swift */; };
 		CD763F6C1C4D5D2200083C27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD763F6B1C4D5D2200083C27 /* GameViewController.swift */; };
@@ -25,7 +26,8 @@
 
 /* Begin PBXFileReference section */
 		CD1BF9D01C4ECB0600DCEA1F /* StatsBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsBoard.swift; sourceTree = "<group>"; };
-		CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyxSpeech.swift; sourceTree = "<group>"; };
+		CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeechBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyxSpeechBox.swift; sourceTree = "<group>"; };
+		CD28B9551C5177F70008FB21 /* NyxSpeechText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyxSpeechText.swift; sourceTree = SOURCE_ROOT; };
 		CD763F621C4D5D2200083C27 /* Nyx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nyx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD763F651C4D5D2200083C27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD763F691C4D5D2200083C27 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -96,10 +98,11 @@
 		CD763F821C4D984E00083C27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD28B9551C5177F70008FB21 /* NyxSpeechText.swift */,
 				CD763F7F1C4D93BE00083C27 /* SoundPlayer.swift */,
 				CD763F7B1C4D6A0D00083C27 /* MainMenuButton.swift */,
 				CD1BF9D01C4ECB0600DCEA1F /* StatsBoard.swift */,
-				CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeech.swift */,
+				CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeechBox.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,11 +201,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD763F801C4D93BE00083C27 /* SoundPlayer.swift in Sources */,
-				CD1BF9D31C4EEBCD00DCEA1F /* NyxSpeech.swift in Sources */,
+				CD1BF9D31C4EEBCD00DCEA1F /* NyxSpeechBox.swift in Sources */,
 				CD763F8C1C4DB14D00083C27 /* GameScene.swift in Sources */,
 				CD763F6A1C4D5D2200083C27 /* MainMenu.swift in Sources */,
 				CD763F7C1C4D6A0D00083C27 /* MainMenuButton.swift in Sources */,
 				CD1BF9D11C4ECB0600DCEA1F /* StatsBoard.swift in Sources */,
+				CD28B9561C5177F70008FB21 /* NyxSpeechText.swift in Sources */,
 				CD763F6C1C4D5D2200083C27 /* GameViewController.swift in Sources */,
 				CD763F661C4D5D2200083C27 /* AppDelegate.swift in Sources */,
 			);

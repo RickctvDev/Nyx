@@ -16,7 +16,6 @@ class MainMenu: SKScene, AVAudioPlayerDelegate {
     let startButton = MainMenuButton(buttonText: "Start", buttonName: "Start")
     let quitButton = MainMenuButton(buttonText: "Settings", buttonName: "Settings")
     
-    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.backgroundColor = UIColor.blackColor()

@@ -14,13 +14,12 @@
 import Foundation
 import SpriteKit
 
-class NyxSpeech {
+class NyxSpeechBox {
     var textCell: SKSpriteNode!
     
-    init(withText: String){
+    init(){
         //NEEDED PROPERTIES
         let gameScene = UIScreen.mainScreen().bounds
-        
         
         //Make Text Box
         textCell = SKSpriteNode(imageNamed: "SpeechBox")
@@ -32,20 +31,17 @@ class NyxSpeech {
         _ = textCell.runAction(moveUpFromBottom)
         
         //LabelNode
-        let labelNode = SKLabelNode(text: "\(withText)")
-        labelNode.text = withText
+        let labelNode = SKLabelNode()
+        labelNode.text = NyxSpeechText.init(level: 1, sentence: 1).SHOWTEXT
+        
         labelNode.fontName = "Courier-Bold"
         labelNode.fontColor = UIColor.whiteColor()
-        labelNode.fontSize = 42
+        labelNode.fontSize = 20
         labelNode.zPosition = 1
+        labelNode.position = CGPointMake(CGRectGetMidX(textCell.frame), CGRectGetMidY(textCell.frame))
         
         //Add label Node to TextCell
         textCell.addChild(labelNode)
-    }
-    
-    func nextBox(){
-        // possible make this the function in the class (MOVE FROM GAMESCENE Controller to avoide confusion)
-        print("NEW BOX APPEARED")
     }
 }
 
