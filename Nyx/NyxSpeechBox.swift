@@ -16,6 +16,7 @@ import SpriteKit
 
 class NyxSpeechBox {
     var textCell: SKSpriteNode!
+    var currentMessage = NyxSpeechText.init().SHOWTEXT
     
     init(){
         //NEEDED PROPERTIES
@@ -32,7 +33,7 @@ class NyxSpeechBox {
         
         //LabelNode
         let labelNode = SKLabelNode()
-        labelNode.text = NyxSpeechText.init(level: 1, sentence: 1).SHOWTEXT
+        labelNode.text = currentMessage
         
         labelNode.fontName = "Courier-Bold"
         labelNode.fontColor = UIColor.whiteColor()

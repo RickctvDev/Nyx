@@ -10,9 +10,10 @@ import Foundation
 
 class NyxSpeechText {
     
-    var currentLevel: Int!
-    var currentSentence: Int!
+    var currentLevel: Int = 1
+    var currentSentence = 1
     var SHOWTEXT: String!
+    var isQuestion: Bool = false
     
     
     let ERROR_ON_LEVEL: String = "SOMETHING WENT WRONG ON LEVEL SECTION!"
@@ -20,15 +21,9 @@ class NyxSpeechText {
     
     init(){
         
-    }
-    
-    init(level: Int, sentence: Int){
-        currentLevel = level
-        currentSentence = sentence
-        
         switch currentLevel {
         //LEVEL 1
-        case 1: print("AT LEVEL \(currentLevel))")
+        case 1: print("We are at Level \(currentLevel)")
         
         //////////////////////LEVEL 1/////////////////////
             switch currentSentence {

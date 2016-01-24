@@ -12,33 +12,55 @@ import AVFoundation
 class GameScene: SKScene, AVAudioPlayerDelegate {
     //Needed Properties
     var audioPlayer = SoundPlayer(trackName: "Scary")
-    let statsBoard = StatsBoard()
+    var NYXSpeechBox = NyxSpeechBox()
+    let questionLeft = QuestionBox(withText: "No").box
+    let questionRight = QuestionBox(withText: "Yes").box
+    var tappedScreen : Int = 0
 
     //This is used in nextBoxAppears (POSSIBLE CHANGE SOON)
-    var tappedScreen: Int = 0
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.backgroundColor = UIColor.blackColor()
         audioPlayer.playForever()
+        makeQuestionButtons()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        nextBoxAppears()
+        for touch: AnyObject in touches {
+            let location = (touch as! UITouch).locationInNode(self)
+            
+            if let theName = self.nodeAtPoint(location).name {
+                
+                if theName == "Right"
+                {
+                    print("TOUCHED RIGHT")
+                    nextBoxAppears()
+                    tappedScreen++
+                    
+                }else if theName == "Left"
+                {
+                    print("TOUCHED LEFT!")
+                    nextBoxAppears()
+                    tappedScreen++
+                }
+            }
+        }
+        //OUT OF TESTING HERE!! WRITE ANY OTHER CODE HERE!!
+    }
+    
+    func makeQuestionButtons(){
+        self.addChild(questionLeft)
+        self.addChild(questionRight)
+        questionLeft.name = "Left"
+        questionRight.name = "Right"
+        questionLeft.position = CGPointMake(CGRectGetMinX(self.frame) + questionLeft.frame.size.width / 2 + 50, CGRectGetMinY(self.frame) + questionLeft.frame.size.height * 2)
+        questionRight.position = CGPointMake(CGRectGetMaxX(self.frame) - questionRight.frame.size.width / 2 - 50, CGRectGetMinY(self.frame) + questionRight.frame.size.height * 2)
     }
     
     func nextBoxAppears(){
         //This pops up the next comment box from NYX. Change over the "Test1" & "Tap Screen" when needed
         // Set up an IF NULL also, to guard from crashes
-            self.addChild(NyxSpeechBox.init().textCell)
-            tappedScreen++
-    }
-    
-    
-    
-    func makeStatsScreen(){
-        statsBoard._statsBoard.position = CGPointMake(CGRectGetMinX(self.frame) + statsBoard._statsBoard.frame.width / 2, 0)
-        statsBoard._statsBoard.size = CGSizeMake(statsBoard._statsBoard.size.width, self.frame.size.height)
-        addChild(statsBoard._statsBoard)
+            self.addChild(NyxSpeechBox().textCell)
     }
 }
