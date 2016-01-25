@@ -12,10 +12,11 @@ import AVFoundation
 class GameScene: SKScene, AVAudioPlayerDelegate {
     //Needed Properties
     var audioPlayer = SoundPlayer(trackName: "Scary")
-    var NYXSpeechBox = NyxSpeechBox()
     let questionLeft = QuestionBox(withText: "No").box
     let questionRight = QuestionBox(withText: "Yes").box
     var tappedScreen : Int = 0
+    var Level : Int!
+    var chosenLevel = NyxSpeechBox().textCell
 
     //This is used in nextBoxAppears (POSSIBLE CHANGE SOON)
     
@@ -27,6 +28,8 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print(tappedScreen)
+        
         for touch: AnyObject in touches {
             let location = (touch as! UITouch).locationInNode(self)
             
@@ -59,8 +62,11 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     }
     
     func nextBoxAppears(){
-        //This pops up the next comment box from NYX. Change over the "Test1" & "Tap Screen" when needed
-        // Set up an IF NULL also, to guard from crashes
-            self.addChild(NyxSpeechBox().textCell)
+        levelSelect(2)
+    }
+    
+    func levelSelect(levelIs: Int){
+        chosenLevel  = NyxSpeechBox.init(level: levelIs, sentence: tappedScreen + 1).textCell
+        self.addChild(chosenLevel)
     }
 }

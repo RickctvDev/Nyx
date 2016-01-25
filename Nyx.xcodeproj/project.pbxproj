@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51FDCCC81C56B9EC0081DC3B /* NyxText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FDCCC71C56B9EC0081DC3B /* NyxText.swift */; };
 		CD1BF9D11C4ECB0600DCEA1F /* StatsBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9D01C4ECB0600DCEA1F /* StatsBoard.swift */; };
 		CD1BF9D31C4EEBCD00DCEA1F /* NyxSpeechBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeechBox.swift */; };
 		CD28B9561C5177F70008FB21 /* NyxSpeechText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD28B9551C5177F70008FB21 /* NyxSpeechText.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51FDCCC71C56B9EC0081DC3B /* NyxText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyxText.swift; sourceTree = "<group>"; };
 		CD1BF9D01C4ECB0600DCEA1F /* StatsBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsBoard.swift; sourceTree = "<group>"; };
 		CD1BF9D21C4EEBCD00DCEA1F /* NyxSpeechBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyxSpeechBox.swift; sourceTree = "<group>"; };
 		CD28B9551C5177F70008FB21 /* NyxSpeechText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyxSpeechText.swift; sourceTree = SOURCE_ROOT; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				CD28B9551C5177F70008FB21 /* NyxSpeechText.swift */,
+				51FDCCC71C56B9EC0081DC3B /* NyxText.swift */,
 				CD763F7F1C4D93BE00083C27 /* SoundPlayer.swift */,
 				CD763F7B1C4D6A0D00083C27 /* MainMenuButton.swift */,
 				CD1BF9D01C4ECB0600DCEA1F /* StatsBoard.swift */,
@@ -161,6 +164,7 @@
 				TargetAttributes = {
 					CD763F611C4D5D2200083C27 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 79N25RX82N;
 					};
 				};
 			};
@@ -206,6 +210,7 @@
 				CD763F801C4D93BE00083C27 /* SoundPlayer.swift in Sources */,
 				CD1BF9D31C4EEBCD00DCEA1F /* NyxSpeechBox.swift in Sources */,
 				CD763F8C1C4DB14D00083C27 /* GameScene.swift in Sources */,
+				51FDCCC81C56B9EC0081DC3B /* NyxText.swift in Sources */,
 				CD763F6A1C4D5D2200083C27 /* MainMenu.swift in Sources */,
 				CD763F7C1C4D6A0D00083C27 /* MainMenuButton.swift in Sources */,
 				CD357C321C557DF900A42B2B /* QuestionBox.swift in Sources */,
@@ -325,10 +330,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Nyx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.screamjunkies.Nyx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -336,10 +344,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Nyx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.screamjunkies.Nyx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

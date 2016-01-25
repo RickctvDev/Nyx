@@ -19,6 +19,7 @@ class QuestionBox {
     init(withText: String){
         let boxText = SKLabelNode()
         box.size = CGSizeMake(box.frame.size.width / 2, box.frame.size.height / 2)
+        box.name = "BOX"
         boxText.text = withText
         boxText.zPosition = 1
         boxText.fontSize = 42

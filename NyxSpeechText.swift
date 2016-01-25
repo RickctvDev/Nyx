@@ -10,8 +10,8 @@ import Foundation
 
 class NyxSpeechText {
     
-    var currentLevel: Int = 1
-    var currentSentence = 1
+    var currentLevel: Int!
+    var currentSentence :Int!
     var SHOWTEXT: String!
     var isQuestion: Bool = false
     
@@ -19,13 +19,16 @@ class NyxSpeechText {
     let ERROR_ON_LEVEL: String = "SOMETHING WENT WRONG ON LEVEL SECTION!"
     let ERROR_ON_SPEECH: String = "SOMETHING WENT WRONG ON SPEECH.. CONFIRM WHICH LEVEL YOU ARE CURRENTLY ON"
     
-    init(){
+    init(level: Int, sentenceNumber: Int){
+        currentSentence = sentenceNumber
+        currentLevel = level
         
         switch currentLevel {
         //LEVEL 1
-        case 1: print("We are at Level \(currentLevel)")
+        case 1: print("We are at Level \(currentLevel) sentence \(currentSentence)")
         
         //////////////////////LEVEL 1/////////////////////
+         
             switch currentSentence {
             case  1: SHOWTEXT = "Please..Hello... Is there somebody there?"
             case  2: SHOWTEXT = "Oh thank god! thank you.. thank you.. thank you... \nI am so glad you answered. \nMy name is Nyx and I am locked inside this shop... \nIt's.. It's called Florence Night..ing or some shit like that."
@@ -39,6 +42,7 @@ class NyxSpeechText {
             case 10: SHOWTEXT = "Ye.. Ye.. You're right. I should be thinking of this... erm.. Well I need food and shit.. Should I take a look around?"
             case 11: SHOWTEXT = "OK, erm... this thing is charging.. so I've gotta leave it here whilst I look around. Promise me you won't leave me!!"
             case 12: SHOWTEXT = "OK.. I trust you.. I'll contact you once I have done everything ..and.. er... thanks"
+                currentLevel = 2
         // ERROR FOUND
             default: print(ERROR_ON_SPEECH)
             }
@@ -46,7 +50,7 @@ class NyxSpeechText {
             
             
        //////////////////////LEVEL 2/////////////////////
-        case 2: print("We are at Level \(currentLevel)")
+        case 2: print("We are at Level \(currentLevel) sentence \(currentSentence)")
         //LEVEL 2 SPEECH
             switch currentSentence {
             case 1: ""
@@ -67,7 +71,7 @@ class NyxSpeechText {
             
         
         //////////////////////LEVEL 3/////////////////////
-        case 3: print("We are at Level \(currentLevel)")
+        case 3: print("We are at Level \(currentLevel) sentence \(currentSentence)")
         //LEVEL 3 SPEECH
             switch currentSentence {
             case 1: ""
@@ -87,27 +91,30 @@ class NyxSpeechText {
             }
             
         //////////////////////LEVEL 4/////////////////////
-        case 4: print("We are at Level \(currentLevel)")
+        case 4: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         //////////////////////LEVEL 5/////////////////////
-        case 5: print("We are at Level \(currentLevel)")
+        case 5: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         //////////////////////LEVEL 6/////////////////////
-        case 6: print("We are at Level \(currentLevel)")
+        case 6: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         //////////////////////LEVEL 7/////////////////////
-        case 7: print("We are at Level \(currentLevel)")
+        case 7: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         //////////////////////LEVEL 8/////////////////////
-        case 8: print("We are at Level \(currentLevel)")
+        case 8: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         //////////////////////LEVEL 9/////////////////////
-        case 9: print("We are at Level \(currentLevel)")
+        case 9: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         //////////////////////LEVEL 10/////////////////////
-        case 10: print("We are at Level \(currentLevel)")
+        case 10: print("We are at Level \(currentLevel) sentence \(currentSentence)")
             
         default: print(ERROR_ON_LEVEL)
         }
+    }
+    init(){
+        
     }
 }
