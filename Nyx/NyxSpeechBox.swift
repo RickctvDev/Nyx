@@ -32,9 +32,13 @@ class NyxSpeechBox {
         
         //LabelNode
         let labelNode = SKLabelNode()
-        let labelText = NyxSpeechText.init(level: level, sentenceNumber: sentence).SHOWTEXT
-        labelNode.text = labelText
         
+        //FIRST ATTEMPT
+        //let labelText = NyxSpeechText.init(level: level, sentenceNumber: sentence).SHOWTEXT
+        //labelNode.text = labelText
+        
+        //SECOND ATTEMPT
+        labelNode.text = NyxText().text[sentence]
         
         labelNode.fontName = "Courier-Bold"
         labelNode.fontColor = UIColor.whiteColor()

@@ -15,8 +15,8 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     let questionLeft = QuestionBox(withText: "No").box
     let questionRight = QuestionBox(withText: "Yes").box
     var tappedScreen : Int = 0
-    var Level : Int!
     var chosenLevel = NyxSpeechBox().textCell
+    var levelIs = 1
 
     //This is used in nextBoxAppears (POSSIBLE CHANGE SOON)
     
@@ -62,11 +62,19 @@ class GameScene: SKScene, AVAudioPlayerDelegate {
     }
     
     func nextBoxAppears(){
-        levelSelect(2)
+        levelSelect()
     }
     
-    func levelSelect(levelIs: Int){
-        chosenLevel  = NyxSpeechBox.init(level: levelIs, sentence: tappedScreen + 1).textCell
-        self.addChild(chosenLevel)
+    func levelSelect(){
+        let maxAmount = NyxText().text.count
+        
+        if tappedScreen >= maxAmount{
+            tappedScreen = 0
+            levelIs = levelIs + 1
+        }else{
+           chosenLevel = NyxSpeechBox.init(level: levelIs, sentence: tappedScreen).textCell
+           self.addChild(chosenLevel)
+            print("We are on Level \(levelIs)")
+        }
     }
 }
